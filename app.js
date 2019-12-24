@@ -8,13 +8,15 @@ const bodyparser = require('body-parser');
 app.use(express.urlencoded({extended: false}));
 app.use(morgan('short'));
 
+
+app.use(express.static('./public'));
 const router =require('./routes/user.js');
-app.use(router);
 
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 
-app.use(express.static('./public'));
+app.use(router);
+
 
 // var mysqlConnection = mysql.createConnection({
 //     host:'localhost',
