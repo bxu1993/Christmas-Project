@@ -9,6 +9,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(morgan('short'));
 
 
+
+
 app.use(express.static('./public'));
 const router =require('./routes/user.js');
 
